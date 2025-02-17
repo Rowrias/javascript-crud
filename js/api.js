@@ -1,4 +1,6 @@
 const api = {
+
+    // Read
     async buscarPensamentos() {
         try {
             const response = await fetch('http://localhost:3000/pensamentos');
@@ -9,6 +11,7 @@ const api = {
         }
     },
     
+    // Create
     async salvarPensamento(pensamento) {
         try {
             const response = await fetch('http://localhost:3000/pensamentos', {
@@ -25,6 +28,7 @@ const api = {
         }
     },
 
+    // Update
     async buscarPensamentoPorId(id) {
         try {
             const response = await fetch(`http://localhost:3000/pensamentos/${id}`);
@@ -47,6 +51,18 @@ const api = {
             return await response.json();
         } catch (error) {
             alert("Erro ao editar pensamentos");
+            throw error;
+        }
+    },
+
+    // Delete
+    async excluirPensamento(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/pensamentos/${id}`, {
+                method: "DELETE"
+            });
+        } catch (error) {
+            alert("Erro ao excluir pensamentos");
             throw error;
         }
     }
