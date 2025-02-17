@@ -43,6 +43,13 @@ Instale o JSON Server globalmente (se ainda não estiver instalado):
 npm install -g json-server
 ```
 
+Em package.json digite no "scripts"
+```
+"scripts": {
+    "start": "json-server --watch db.json --port 3000"
+  },
+```
+
 Para executar, abra um novo terminal e, dentro da pasta backend, execute:
 
 ```bash
